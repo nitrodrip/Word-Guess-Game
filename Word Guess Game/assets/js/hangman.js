@@ -1,12 +1,12 @@
 // Grab DOM elements
-var $newGameButton = document.getElementById('new-game-button');
+var $newGameButton = document.getElementById('newGameButton');
 var $placeholders = document.getElementById('placeholders');
-var $guessedLetters = document.getElementById('guessed-letters');
-var $guessesLeft = document.getElementById('guesses-left');
+var $guessedLetters = document.getElementById('guessedLetters');
+var $guessesLeft = document.getElementById('guessesLeft');
 var $wins = document.getElementById('wins');
 var $loses = document.getElementById('loses');
 
-//Create game Vars (wordBank, wins, loses, pickedword, guesses left, game running, picked word placeholder, guessed letter bank, incorrect letter bank)
+//Create game varibles: wordBank, wins, loses, pickedword, guesses left, game running, picked word placeholder, guessed letter bank, incorrect letter bank)
 
 var wordBank = ['Zodiac', 'Bundy', 'Dahmer', 'Gacy', 'Berkowitz'];
 var wins = 0;
@@ -18,9 +18,8 @@ var pickedWordPlaceholderArr = [];
 var guessedLetterBank = [];
 var incorrectLetterBank = [];
 
-
 //newGame function to pick new word and create placeholders
-    function newGame() {
+    function newGame()  {
     
 //Resets all game info:
     gameRunning = true;
@@ -62,7 +61,7 @@ console.log(letter);
     //Check if guessed letter is in my picked word
     for (var i = 0; i < pickedWord.length; i++) {
         
-    //Convert to lowercase if needed to compare correctly
+    //Convert both to lowercase if needed to compare correctly
         if (pickedWord[i].toLocaleLowerCase () === )letter.toLowerCase {
             //If match, swap letter that character 
             pickedWordPlaceholderArr[i] === pickedWord[i];
@@ -73,10 +72,9 @@ console.log(letter);
             alert ("Press the Play button to Start"); {
         else {
             alert ("You've already Guessed that Letter");
-                       
-                   }
-               }
-           }
+         }
+        }
+        }
        }   
     } 
 }

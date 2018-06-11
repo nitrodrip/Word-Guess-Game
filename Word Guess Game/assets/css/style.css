@@ -2,10 +2,9 @@ body {
     color: #000000;
     background-color: #20c997;
 }
-
 .background {
     background-color: #0000ff;
-    background-image: url(../images/backgroundarcade.jpg);
+    background-image: url(../images/background.jpg);
     background-size: cover;
     background-blend-mode: multiply;
 }
