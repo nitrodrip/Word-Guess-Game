@@ -37,7 +37,6 @@ var incorrectLetterBank = [];
          if (pickedWord[i] === ' ') {
              pickedWordPlaceholderArr.push(' ');
          } 
-         
          else {
             pickedWordPlaceholderArr.push('_');
         }
@@ -56,7 +55,7 @@ console.log(letter);
     if (gameRunning === true && guessedLetterBank.indexOf(letter) === -1) {
 
     //Run Game Logic
-    guessedLetterBank.pash(letter);
+    guessedLetterBank.push(letter);
     
     //Check if guessed letter is in my picked word
     for (var i = 0; i < pickedWord.length; i++) {
@@ -64,10 +63,13 @@ console.log(letter);
     //Convert both to lowercase if needed to compare correctly
         if (pickedWord[i].toLocaleLowerCase () === )letter.toLowerCase {
             //If match, swap letter that character 
-            pickedWordPlaceholderArr[i] === pickedWord[i];
+            pickedWordPlaceholderArr[i] = pickedWord[i];
             }
     } 
-    else {
+    $placeholders.textContent = pickedWordPlaceholderArr.join('');
+    checkIncorrect(letter);
+    }
+        else {
         if (gameRunning  === false) {
             alert ("Press the Play button to Start"); {
         else {
@@ -77,15 +79,37 @@ console.log(letter);
         }
        }   
     } 
-}
 
 //checkIncorrect(letter)
-
+function checkIncorrect (letter) {
+    
+    //Check if letter DIDN'T make it in our pickedWordPlaceholder i.e incorrect guess
+    if (pickedWordPlaceholderArr.indexOf(letter.toLowerCase()) === -1 && 
+        pickedWordPlaceholderArr.indexOf(letter.toUpperCase()) === -1) 
+    {
+        //Decrease guesses score
+        guessesLeft--;
+        
+        //Add incorrect letter to incorrectLetterBank
+        incorrectLetterBank.push(letter);
+        
+        //Write new bank of incorrect letters to DOM
+        $guessedLetters.textContent = incorrectLetterBank.join(' ');
+        
+        //Write new amount of guesses to the DOM
+        $guessesLeft.textContent = guessesLeft;
+    }
+}
 //checkLose
 
 //checkWin
 
-// Event Listener for new game button
-$newGameButton.addEventListener('click', newGame)
+// Add an Event Listener for newGame button click
+$newGameButton.addEventListener('click', newGame);
 
 // Add onKeyup event to trigger letterGuess
+document.onkeyup = function(event) {
+    if (event.keyCode >= 65 && event.keyCode <= 90) {
+        letterGuess(event.key);
+    }
+}

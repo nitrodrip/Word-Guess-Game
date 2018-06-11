@@ -3,7 +3,7 @@ body {
     background-color: #20c997;
 }
 .background {
-    background-color: #0000ff;
+    background-color: whitesmoke;
     background-image: url(../images/background.jpg);
     background-size: cover;
     background-blend-mode: multiply;
@@ -17,6 +17,7 @@ body {
     background-color: aqua;
     position: relative;
     font-size: 30px;
+    font-weight: block;
     color: black;
     text-transform: uppercase;
     letter-spacing: 2px;
