@@ -63,8 +63,9 @@ console.log(letter);
     for (var i = 0; i < pickedWord.length; i++) {
         
 //Convert both to lowercase if needed to compare correctly
-        if (pickedWord[i].toLocaleLowerCase () === )letter.toLowerCase {
-            //If match, swap letter that character 
+      if (pickedWord[i].toLocaleLowerCase () === )letter.toLowerCase {
+
+		  //If match, swap letter that character 
             pickedWordPlaceholderArr[i] = pickedWord[i];
             } 
         } 

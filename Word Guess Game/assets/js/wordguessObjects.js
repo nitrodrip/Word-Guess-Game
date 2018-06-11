@@ -9,7 +9,7 @@ var $wins = document.getElementById('wins');
 var $loses = document.getElementById('loses');
 
 var game = {
- wordBank = ['Zodiac', 'Bundy', 'Dahmer', 'Gacy', 'Berkowitz'];
+ wordBank: ['Zodiac', 'Bundy', 'Dahmer', 'Gacy', 'Berkowitz'];
  wins: 0;
  losses: 0;
  guessesLeft: 8;
@@ -18,9 +18,29 @@ var game = {
  pickedWordPlaceholderArr: [];
  guessedLetterBank: [];
  incorrectLetterBank: [];
- newGame: function () {-
-},
+ newGame: function() {
+	//Reset game info
+	this.gameRunning = true;
+    this.guessesLeft = 8;
+    this.guessedLetterBank = [];
+    this.incorrectLetterBank = [];
+    this.pickedWordPlaceholderArr = [];
 
+//Pick a new word
+	this.pickedWord = wordBank[Math.floor(Math.random() * this.wordBank.length)];
+    
+//Create a placeholder out of new pickWord
+     for (var i = 0; i < this.pickedWord.length; i++) {
+         
+         if (pickedWord[i] === ' ') {
+             this.pickedWordPlaceholderArr.push(' ');
+         } 
+         else {
+            this.pickedWordPlaceholderArr.push('_');
+        }
+      }
+     } 
+	 
 letterGuess: function(letter) {-
 	),
 
